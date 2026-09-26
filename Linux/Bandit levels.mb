@@ -148,6 +148,21 @@ cat ./var/lib/dpkg/info/bandit7.password
 ```
 
 **Explanation:** 
--Used the grep to grab the line millionth which contained the password
+- Used the grep to grab the line millionth which contained the password
 
 **Password:** VR1ljMayciFxbnUokuQmJFw6QC9VKtub
+
+## Bandit Level 8 → Level 9
+
+**Challenge:* The password for the next level is stored in the file data.txt and is the only line of text that occurs only once
+
+**Solution:**
+```bash
+sort data.txt | uniq -u
+```
+
+**Explanation:** 
+- Sorts the data.txt file as it groups the lines that are the same after one another
+- uniq -u only compares two values next to each other so once they're grouped it can correctly remove duplicates
+
+**Password:** EjmOSvuAu7sGAHqHVcBDPirRe9T03kxl
