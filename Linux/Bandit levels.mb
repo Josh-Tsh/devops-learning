@@ -166,3 +166,23 @@ sort data.txt | uniq -u
 - uniq -u only compares two values next to each other so once they're grouped it can correctly remove duplicates
 
 **Password:** EjmOSvuAu7sGAHqHVcBDPirRe9T03kxl
+
+## Bandit Level 8 → Level 9
+
+**Challenge:* The password for the next level is stored in the file data.txt in one of the few human-readable strings, preceded by several ‘=’ characters.
+
+**Solution:**
+```bash
+strings data.txt | grep "==="
+OUTPUT --
+cL0========== the
+========== password
+>========== is
+R========== B0s2khmbT9u0geKuOoVGW3JZKhndE3BG
+--
+
+**Explanation:** 
+- Strings command only outputs the string values in the file
+- Grep command grabs the lines containing '==='
+
+**Password:** B0s2khmbT9u0geKuOoVGW3JZKhndE3BG
