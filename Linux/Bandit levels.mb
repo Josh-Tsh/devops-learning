@@ -202,3 +202,18 @@ base64 -d data.txt
 - At first I was trying at first just the Base64 command which was encrypting it again
 
 **Password:** pYfOY6HwUsDj5rL9UvyhU7MCmv8vN5Ro
+
+## Bandit Level 11 → Level 12
+
+**Challenge:* The password for the next level is stored in the file data.txt, where all lowercase (a-z) and uppercase (A-Z) letters have been rotated by 13 positions
+
+**Solution:**
+```bash
+cat data.txt | tr 'A-Za-z' 'N-ZA-Mn-za-m'
+```
+
+**Explanation:** 
+- The tr command translates a set of rule.
+- The rulse here are letter A-Z and a-z become letters a-m become n-z then ther letters n-z become a-m.
+
+**Password:** GROozWPO8QyN0mGrjUkID0WCYkZiQxrN
