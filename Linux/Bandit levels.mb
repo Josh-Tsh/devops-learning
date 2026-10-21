@@ -289,3 +289,33 @@ Make sure to read the error messages as they are informative.
 
 **Solution:**
 ```bash
+bandit13@bandit:~$ ssh -i ssh.privatekey bandit14@localhost
+--OUTPUT
+Warning: Identity file ssh.privatekey not accessible: No such file or directory.
+The authenticity of host 'localhost (127.0.0.1)' can't be established.
+ED25519 key fingerprint is: SHA256:C2ihUBV7ihnV1wUXRb4RrEcLfXC5CXlhmAAM/urerLY
+This key is not known by any other names.
+Are you sure you want to continue connecting (yes/no/[fingerprint])? y
+Please type 'yes', 'no' or the fingerprint: yes
+Could not create directory '/home/bandit13/.ssh' (Permission denied).
+Failed to add the host to the list of known hosts (/home/bandit13/.ssh/known_hosts).
+
+                      This is an OverTheWire game server.
+            More information on http://www.overthewire.org/wargames
+
+!!! You are trying to log into this SSH server on port 22, which is not intended.
+!!! If you are trying to log in to an OverTheWire game, use the port mentioned in
+!!! the "SSH Information" on that game's webpage (in the top left corner).
+--
+
+*Note* Open up sshkey.private and copy contents then head to my terminal and copied the contents into a file named 'sshkey.private'
+
+@Joshua ssh -i ./sshkey.private bandit14@localhost -p 2220
+bandit14@bandit: -$
+```
+
+**Explanation:** 
+- I used the private key from bandit13 and coppied it to my directory on my home account the i used this to connect to bandit14 instead of a password
+- From the private key and command -i that tels the SSh which private key to use in this case ./sshkey.private
+
+**Password:** Null
